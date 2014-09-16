@@ -9,16 +9,15 @@
     .cflogo{
       position: absolute;
       top: 0;
-      height: 8vh;
       margin: 0;
       width: 100%;
-      padding: 0;
+      padding: .618em 0;
       background: transparent;
       display: flex;
       align-items: center;
       justify-content: center;
       img{
-        height: 5vh;
+        height: 1.618em;
         width: auto;
         margin: 0;
         z-index: 1;
@@ -27,10 +26,21 @@
     .student, .mentor{
       padding-top: 40vh;
     }
+    h1{
+      font-size: 1.618em;
+      line-height: 1.5em;
+    }
+    h2{
+      font-size: 1em;
+      line-height: 1.5em;
+    }
     h3{
-      font-size: .5em;
+      text-indent: -.5em;
+      font-size: .618em;
       // font-style: normal;
-      padding-top: 3em;
+      padding-top: 1.618em;
+      font-weight: 300;
+
     }
     p{
       &.whoFor{
@@ -54,7 +64,8 @@
         font-size: .75em;
         font-style: normal;
         p{
-          font-family: $header-font;
+          font-family: $body-font;
+          font-variant: small-caps;
           margin: 0;
           margin-top: -2em;
           padding: 0;
@@ -67,7 +78,7 @@
           width: 100%;
           color: $delta;
           text-align: center;
-          font-size: 1.5em;
+          font-size: 1.618em;
         }
       }
       &.button-wrap, .haveAccount{

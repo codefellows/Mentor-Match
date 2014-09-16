@@ -24,6 +24,8 @@ Rails.application.routes.draw do
   get 'users/:id/history' => 'users#history', as: :history
   get 'static_pages/feedback' => 'static_pages#feedback', as: :feedback
   get 'static_pages/calendar' => 'static_pages#calendar', as: :calendar
+  get 'static_pages/view_user_mentee' => 'static_pages#view_user_mentee'
+  get 'static_pages/view_user_mentor' => 'static_pages#view_user_mentor'
   # You can have the root of your site routed with "root"
 
   root 'passthrough#index'

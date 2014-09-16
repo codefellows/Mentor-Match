@@ -1,8 +1,8 @@
 var sendMentorMessage = function (){
-  document.getElementByClassName("popBox").style.marginBottom = "100vh";
-  document.getElementByClassName("messageSent").style.marginBottom = "0";
+  $(".popBox").css("margin-top", "-100vh");
+  $(".messageSent").css("margin-bottom", "0");
 }
 
-function(){
-  document.getElementByClassName("yes").onClick = sendMentorMessage();
-}
+$(function(){
+  $("#yes").click(sendMentorMessage);
+});

@@ -1,0 +1,65 @@
+%article.userProfile
+  %figure.profilePic
+    .profilePicPlaceholder
+  %button.last <
+  %button.next >
+  %section.nameContainer
+    %p.isVisible
+      Iron Man
+      -# = @user.first_name.capitalize + " " + @user.last_name.capitalize
+  %section
+    %h3.detail_1 background
+    %p.detail_1 Experienced supervillain-fighting expert. I specialize in robotics, advanced technology research, charming banter and quiet philanthropy.
+    -# = @user.background
+  %section
+    %h3.detail_2 accomplishments
+    %p.detail_2
+      Repeatedly saved humanity from certain destruction.
+  %section
+    %h3.detail_3 Organization
+    %p.detail_3 Stark Industries
+    -# = @user.company
+    %h3.detail_3 Position
+    %p.detail_3 Boss
+    -# = @user.position
+  %nav.buttonContainer
+    %button.back
+      %span{class: "fa  fa-angle-double-left"}
+    %button.addToFavorites
+      %span{class: "fa fa-star"}
+    %button.contactUser
+      %span{class: "fa fa-comment-o"}
+  .popShadow
+  %section.popBox.favorite
+    %p
+      Would you like to add
+      %br
+      Iron Man to your favorites list?
+    %button.yesAdd yeah!
+    %button.noAdd not now
+  %section.popMessage.favorite
+    %p
+      Most excellent!
+      %br
+      You can review mentors you've favorited
+      %br
+      from your home screen.
+      = image_tag "cflogo.png", {alt: "Codefellows Logo", class: "goHome"}
+  %section.popBox.contact
+    %p
+      Would you like to introduce
+      %br
+      yourself to Iron Man?
+    %button.yesIntro yeah!
+    %button.noIntro maybe later
+  %section.popMessage.contact
+    %p
+      Great!
+      %br
+      We've sent Iron Man an email
+      %br
+      saying how awesome you are.
+      %br
+      Keep an eye on your inbox.
+    = image_tag "cflogo.png", {alt: "Codefellows Logo", class: "goHome"}
+  .popShadow

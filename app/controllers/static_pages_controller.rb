@@ -15,4 +15,10 @@ class StaticPagesController < ApplicationController
   def calendar
   end
 
+  def view_user_mentee
+  end
+
+  def view_user_mentor
+  end
+
 end

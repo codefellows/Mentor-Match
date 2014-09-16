@@ -1,0 +1,39 @@
+%article.userProfile
+  %figure.profilePic
+    .profilePicPlaceholder
+    -# = image_tag @user.gravatar_url(:d => "http%3A%2F%2Fi.imgur.com%2FUFa4kwT.png")
+  %button.last <
+  %button.next >
+  %section.nameContainer
+    %p.isVisible
+      Brian Studwell
+      -# = @user.first_name.capitalize + " " + @user.last_name.capitalize
+  %section
+    %h3.detail_1 background
+    %p.detail_1  I’ve moved to tech from a background in experience and service design. I’m fascinated by the trajectory of our relationship with technology. I want to build rich, digital experiences that real people can use.
+    -# = @user.background
+  %section
+    %h3.detail_2 accomplishments
+    %p.detail_2
+      I've previously developed strategy and UI for two successful digital products. I Completed Codefellows Front End UX Development Accelerator and once held a handstand for 43 seconds.
+      -# = @user.accomplishments
+  %section
+    %h3.detail_3 professional summary
+    %p.detail_3 I graduated with a degree in English in 2009 and spent the following six years working my way through hospitality and tourism, food and beverage and emergency medicine. I learned a lot about how people think, work, react and feel. I spent most of 2013 at a creative strategy firm in Portland, which introduced me to the field of User Experience. I'm aiming to leverage my educational and professional background towards a career at the intersection of commerce and culture.
+    -# = @user.professional_summary
+  %section
+    %h3.detail_4 personal statement
+    %p.detail_4 Put an interesting problem in front of me and I'll work myself to the bone finding the best solution.
+    -# = @user.personal_statement
+  %section
+    %h3.detail_5 stack
+    %p.detail_5 Front End & UX
+    -# = @user.stack
+    %h3.detail_5 class
+    %p.detail_5 May - June 2014
+    -# = @user.graduating_class
+  %section.buttonContainer
+    %button
+      <<
+    %button.add
+      +

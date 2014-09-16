@@ -30,7 +30,7 @@
       \============================================
       MENTEE SPECIFIC SECTION
       \==============================================
-    - if current_user.mentee?
+    - if @user.mentee?
       %section
         %input#showMoreProfSum.showMore{type: "checkbox"}/
         %label.showMore{for: "showMoreProfSum"}
@@ -61,7 +61,7 @@
         .popShadow
         %section.popBox
           %p Would you like to introduce yourself to #{@user.first_name} ?
-          %button.yes Yeah!
+          %button#yes Yeah!
           %button Maybe Later
         %section.messageSent
           %p Great! We've sent #{@user.first_name} an email letting them know how awesome you are. Keep an eye on your inbox.

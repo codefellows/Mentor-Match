@@ -1,0 +1,164 @@
+.userProfile{
+  padding: 1em;
+  box-sizing: border-box;
+  height: 100vh;
+  min-height: 100vh;
+  width: 100vw;
+  background: $alpha;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  .profilePicPlaceholder{
+    height: 10vh;
+    width: 10vh;
+    border-radius: 50%;
+    border: 3px solid $charlie;
+    background: $bravo;
+    margin: 0 auto;
+  }
+  figure{
+    display: block;
+    width: 100%;
+    margin: 0 auto;
+  }
+  input{
+    display: none;
+  }
+  section, p{
+    font-family: $header-font;
+    font-style: normal;
+    text-align: center;
+  }
+  section{
+    position: absolute;
+    top: 25%;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 70%;
+    height: 10vh;
+    color: $charlie;
+    text-overflow: ellipsis;
+    &.nameContainer{
+      top: 15%;
+    }
+  }
+  h3{
+    font-family: $header-font;
+    font-size: .618em;
+    color: $charlie;
+    text-transform: uppercase;
+    font-style: normal;
+    padding: 0 2em 2em 0;
+    opacity: 0;
+    transition: all .2s ease-out;
+    &.isVisible{
+      padding-right: 0;
+    }
+  }
+  p{
+    transition: all .2s ease-in-out;
+    font-size: .618em;
+    height: 100%;
+    transform: translateX(-100px);
+    text-overflow: ellipsis;
+    display: block;
+    opacity: 0;
+    &.isVisible{
+      transform: translateX(0);
+    }
+  }
+  .buttonContainer{
+    position: relative;
+    width: 80%;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  button{
+    background: $charlie;
+    color: $delta;
+    width: 10vh;
+    height: 10vh;
+    border-radius: 50%;
+    border: none;
+  }
+  .next, .last{
+    height: 2em;
+    width: 2em;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+    z-index: 1;
+  }
+  .next{
+    right: 2%;
+  }
+  .last{
+    left: 2%;
+  }
+  .isVisible{
+    opacity: 1;
+  }
+  // .popShadow{
+  //   transition: all .5s ease-out;
+  //   height: 100vh;
+  //   width: 100vw;
+  //   position: absolute;
+  //   top: 0;
+  //   left: 0;
+  //   background-color: rgba(0, 0, 0, .8);
+  //   opacity: 0;
+  //   z-index-: -1;
+  // }
+  .popBox, .popMessage{
+    perspective: 500px;
+    opacity: 0;
+    position: absolute;
+    z-index: 4;
+    transition: all .5s ease-out;
+    background: rgba(0, 0, 0, .7);
+    height: auto;
+    padding: 2em;
+    border-radius: 3px;
+    transform: translateY(100vh);
+    p{
+      transform: translateX(0);
+      opacity: 1;
+    }
+    button{
+      border-radius: 3px;
+      background: transparent;
+      border: 2px solid $charlie;
+      width: 8em;
+      height: 3em;
+      font-size: .618em;
+      text-transform: uppercase;
+      display: block;
+      margin: 1em auto;
+    }
+  }
+  .popMessage{
+    position: absolute;
+    img{
+      height: 4.236em;
+      padding-top: .618em;
+      width: auto;
+      display: block;
+      margin: 0 auto;
+    }
+  }
+  .popShadow{
+    transition: all .5s ease-out;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background: $alpha;
+    z-index: -1;
+    opacity: 0;
+  }
+}
