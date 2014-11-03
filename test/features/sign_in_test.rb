@@ -31,7 +31,7 @@ feature "A user must be able to sign in in a variety of ways" do
   scenario "signed in users are taken to their dashboard" do
     sign_in_mentee
     visit root_path
-    page.must_have_content "Browse"
+    page.current_path.must_equal dashboard_path users(:mentee_user)
   end
 
   # scenario "sign in with github works" do
