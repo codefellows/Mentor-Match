@@ -11,7 +11,7 @@ class UsersController < ApplicationController
     redirect_to @user
   end
 
-  def dashboard
+def dashboard
     @pending_friendships = Friendship.where("friend_id = ? AND state = ?", current_user.id, "pending")
     @users = policy_scope(User).page(params[:page]).limit(1)
   end
@@ -54,19 +54,7 @@ class UsersController < ApplicationController
 
   # POST /users
   # POST /users.json
-  def create
-    @user = User.new(user_params)
 
-    respond_to do |format|
-      if @user.save
-        format.html { redirect_to '/profile_starter', notice: 'User was successfully created.' }
-        format.json { render :show, status: :created, location: @user }
-      else
-        format.html { render :new }
-        format.json { render json: @user.errors, status: :unprocessable_entity }
-      end
-    end
-  end
 
   # PATCH/PUT /users/1
   # PATCH/PUT /users/1.json

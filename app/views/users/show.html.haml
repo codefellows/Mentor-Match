@@ -13,7 +13,7 @@
             %span.fa.fa-chevron-circle-right
     %section
       %label{for: "Name"} Name:
-      %p#Name= @user.first_name.capitalize + " " + @user.last_name.capitalize
+      %p#Name= "#{@user.first_name.capitalize} #{@user.last_name.capitalize}"
     %section
       %input#showMoreBackground.showMore{type: "checkbox"}/
       %label.showMore{for: "showMoreBackground"}
@@ -89,12 +89,12 @@
       - if @pending
         - @pending.each do |pending|
           / I would like to add an intermediary step here. Mentees and Mentors need to have an initial conversation to test the waters before plunging into a full on Mentorship. It needs to be something like, 'get introduced'.
-        %button
-          = link_to "Approve mentorship with #{User.find(pending.user_id).first_name}", friendship_path(id: pending.id, state: "approved"), method: :patch
-    /
-      \============================================
-      ADMIN-SPECIFIC SECTION
-      \==============================================
+          %button
+            = link_to "Approve mentorship with #{User.find(pending.user_id).first_name}", friendship_path(id: pending.id, state: "approved"), method: :patch
+      / /
+      / \============================================
+      / ADMIN-SPECIFIC SECTION
+      / \==============================================
     - if current_user.admin?
       %p
         Admin:
