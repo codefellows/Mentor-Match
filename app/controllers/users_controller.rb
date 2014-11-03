@@ -52,10 +52,6 @@ def dashboard
     session[:return_to] = params[:return_to]
   end
 
-  # POST /users
-  # POST /users.json
-
-
   # PATCH/PUT /users/1
   # PATCH/PUT /users/1.json
   def update

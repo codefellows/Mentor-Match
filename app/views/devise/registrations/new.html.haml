@@ -26,12 +26,12 @@
         = f.password_field :password_confirmation, autocomplete: "off", placeholder: "xxxxxxxx"
         .break
 
-      = render('mentee_stack', f: f) if params[:user_type] == 'mentee'
+      = render('mentee_stack', f: f) if session[:role] == 'mentee'
 
       %section.submitBtn
         %button.trans_wht_btn
           = f.submit "Submit", {class: "btn_txt"}
-    = f.hidden_field :role, value: params[:user_type]
+    = f.hidden_field :role, value: session[:role]
     %section.submitOptions
       %p or sign up with another account:
       %section.links-wrapper
