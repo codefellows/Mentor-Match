@@ -9,6 +9,12 @@
         = f.label :email
         = f.email_field :email, autofocus: true, placeholder: "example"
         .break
+      %section.userFirstName
+        = f.label :first_name
+        = f.text_field :first_name, placeholder: "James"
+      %section.userLastName
+        = f.label :last_name
+        = f.text_field :last_name, placeholder: "Smith"
       %section.userPassword
         = f.label :password
         = f.password_field :password, autocomplete: "off", placeholder: "xxxxxxxx"
