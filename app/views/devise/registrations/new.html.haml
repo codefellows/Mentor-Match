@@ -3,7 +3,7 @@
     %h1 Create Account
   =form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
     =devise_error_messages!
-    = render "#{params[:user_type]}_h2"
+    = render 'phrases'
     %article.inputs
       %section.userEmail
         = f.label :email
@@ -12,9 +12,11 @@
       %section.userFirstName
         = f.label :first_name
         = f.text_field :first_name, placeholder: "James"
+        .break
       %section.userLastName
         = f.label :last_name
         = f.text_field :last_name, placeholder: "Smith"
+        .break
       %section.userPassword
         = f.label :password
         = f.password_field :password, autocomplete: "off", placeholder: "xxxxxxxx"
@@ -24,7 +26,7 @@
         = f.password_field :password_confirmation, autocomplete: "off", placeholder: "xxxxxxxx"
         .break
 
-      = render "#{params[:user_type]}_stack", f: f
+      = render('mentee_stack', f: f) if params[:user_type] == 'mentee'
 
       %section.submitBtn
         %button.trans_wht_btn

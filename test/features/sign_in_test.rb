@@ -7,6 +7,17 @@ feature "A user must be able to sign in in a variety of ways" do
     seed_db
   end
 
+  scenario 'As a user, I must redirect to sign in form if form is invalid' do
+    first(:link, "Become a Mentor").click
+    fill_in "Email", with: users(:mentor_user).email
+    fill_in "user_first_name", with: users(:mentee_user).first_name
+    fill_in "Password", with: 12345678
+    fill_in "user_password_confirmation", with: 'blahblah'
+    click_on "Submit"
+
+    page.must_have_content "Create Account"
+  end
+
   scenario "As a user I want to create a new mentor account " do
     page.must_have_content"Dexter"
     first(:link, "Become a Mentor").click
@@ -67,3 +78,5 @@ feature "A user must be able to sign in in a variety of ways" do
   # end
 
 end
+
+
