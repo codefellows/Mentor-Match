@@ -9,7 +9,7 @@ feature "user policy is enforced" do
   scenario "user can edit their own profile" do
     click_on "settings"
     click_on "Edit"
-    assert_content "quick questions to build your profile"
+    assert_content "Sweet! Your seconds away from the roster."
   end
 
   scenario "user cannot edit other user's profile" do
