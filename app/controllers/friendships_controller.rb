@@ -20,8 +20,7 @@ class FriendshipsController < ApplicationController
 
   def update
     @friendship = Friendship.find(params[:id])
-    @friendship.accepted
-    @friendship.save!
+    @friendship.accept
     flash[:notice] = "Mentorship approved"
     redirect_to root_path
   end
