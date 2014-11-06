@@ -1,23 +1,19 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :profile_starter, :edit, :update, :destroy, :dashboard, :star, :unstar, :history]
 
-  def star
-    @user.liked_by current_user
-    redirect_to @user
-  end
+  # def star
+  #   @user.liked_by current_user
+  #   redirect_to @user
+  # end
 
-  def unstar
-    @user.unliked_by current_user
-    redirect_to @user
-  end
+  # def unstar
+  #   @user.unliked_by current_user
+  #   redirect_to @user
+  # end
 
   def dashboard
     @users = policy_scope(User).search(params[:search]).paginate(page: params[:page], per_page: 5)
     @pending_friendships = Friendship.where("friend_id = ? AND state = ?", current_user.id, "pending")
-  end
-
-  def history
-    @users = policy_scope(User)
   end
 
   # GET /users
@@ -28,14 +24,7 @@ class UsersController < ApplicationController
 
   # GET /users/1
   # GET /users/1.json
-  def show
-    if Friendship.where("friend_id = ? AND user_id = ? AND state = ?", current_user.id, params[:id], "pending")
-      @pending = Friendship.where("friend_id = ? AND user_id = ? AND state = ?", current_user.id, params[:id], "pending")
-    end
-    if Friendship.where("friend_id = ? AND user_id = ? AND state = ?", current_user.id, params[:id], "approved")
-      @approved_mentorship = Friendship.where("friend_id = ? AND user_id = ? AND state = ?", current_user.id, params[:id], "approved")
-    end
-  end
+  def show; end
 
   # GET /users/new
   def new
