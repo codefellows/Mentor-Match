@@ -1,7 +1,7 @@
 require 'test_helper'
 
 feature 'As a mentor, I want to edit my profile' do
-  scenario 'should edit name, bio, company, and position' do
+  scenario 'should edit name, bio, company, and position', js: true do
     sign_in_mentor
     visit edit_user_path(users(:mentor_user))
 
