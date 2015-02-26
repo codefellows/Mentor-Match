@@ -95,7 +95,7 @@
   %aside
     / Edit own profile
     - if policy(@user).update?
-      = link_to "Edit", edit_user_path(current_user), class: 'addFav'
+      = link_to "Edit", edit_user_path(current_user), class: 'addFav', 'data-no-turbolink' => true
     / Add or remove favorites link
     - if current_user.voted_for? @user
       = link_to "Remove from favorites", unstar_user_path(@user), method: :put, class: "addFav"
