@@ -1,5 +1,5 @@
 %article.userCard
-  = image_tag user.gravatar_url(:d => "http%3A%2F%2Fi.imgur.com%2FUFa4kwT.png")
+  = image_tag image_view(user)
   %p#name= user.fullname
   - if user.mentee?
     %p#stack= user.course

@@ -152,13 +152,14 @@
     width: 100%;
     height: 2em;
   }
-  span{
+  span.next{
     display: block;
     text-align: center;
     width: 100%;
     color: $bravo;
     font-size: 8vh;
     cursor: pointer;
+    margin: auto 0;
   }
   ul{
     margin-top: 15vh;
@@ -194,4 +195,9 @@
       text-align: center;
     }
   }
+}
+
+.linkedin{
+  text-align: center;
+  margin: 2em;
 }

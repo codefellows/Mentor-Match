@@ -3,7 +3,7 @@
     %section
       %figure
         = link_to(user_path(request.user)) do
-          = image_tag request.user.gravatar_url(:d => "http%3A%2F%2Fi.imgur.com%2FUFa4kwT.png")
+          = image_tag image_view(request.user)
       .paraWrap
         %p.paraWrap #{ request.user.first_name } requested to be your #{ request.user.role }
         = link_to 'Accept', friendship_path(request), method: :patch, class: 'button'

@@ -1,3 +1,10 @@
+- content_for :javascripts do
+  %script{src: 'https://platform.linkedin.com/in.js', type: 'text/javascript'}
+    :cdata
+      api_key: #{ENV['LINKEDIN_KEY']}
+      onLoad: onLinkedInLoad
+      authorize: true
+
 .profileBuild
   %button.skip
     = link_to "Save this Step for Later", user_path(@user)
@@ -20,6 +27,7 @@
           %li.progDot
           - if current_user.role == "mentee"
             %li.progDot
+          %li.progDot
     %section#s2
       %h2
         We'll use a few quick questions to build your profile.
@@ -36,6 +44,7 @@
           %li.progDot
           - if current_user.role =="mentee"
             %li.progDot
+          %li.progDot
     - if current_user.role == "mentee"
       %section#s3
         %h2
@@ -49,6 +58,7 @@
             %li.progDot
             %li.progDot
             %li.progDot.active
+            %li.progDot
             %li.progDot
             %li.progDot
       %section#s4
@@ -65,14 +75,15 @@
             %li.progDot
             %li.progDot.active
             %li.progDot
+            %li.progDot
       %section#s5
         %h2
           What do you want for your professional future?
         .fieldWrap
           = f.label :hopes_for_future, 'Hopes for my professional future'
           = f.text_area :hopes_for_future, placeholder: 'Example: I want to move to Silicon Valley and find work there.'
-          %button.submit
-            = f.submit 'Submit', class: "submit"
+
+          %span.next.fa.fa-angle-double-right#next_5
         %nav.progBar
           %ul
             %li.progDot
@@ -80,6 +91,7 @@
             %li.progDot
             %li.progDot
             %li.progDot.active
+            %li.progDot
     - if current_user.role == "mentor"
       %section#s3
         %h2
@@ -94,17 +106,38 @@
             %li.progDot
             %li.progDot.active
             %li.progDot
+            %li.progDot
       %section#s4
         %h2
           Where do you work? <br> Just the company name is fine.
         .fieldWrap
           = f.label :company
           = f.text_field :company, type: "text", placeholder: "ACME Corp."
-          %button.submit
-            = f.submit 'Submit', class: "submit"
+          %span.next.fa.fa-angle-double-right#next_5
         %nav.progBar
           %ul
             %li.progDot
             %li.progDot
             %li.progDot
             %li.progDot.active
+            %li.progDot
+    %section#s6
+      %h2
+        Would you like Mentor Match to use your LinkedIn profile picture?
+        Mentor Match will automatically try use Gravatar, but you can use
+        your LinkedIn profile picture instead by clicking the button below.
+      .linkedin
+        %script{type: 'IN/Login'}
+      .fieldWrap
+        = f.hidden_field :image_url
+        %button.submit
+          = f.submit 'Submit', class: "submit"
+      %nav.progBar
+        %ul
+          %li.progDot
+          %li.progDot
+          %li.progDot
+          %li.progDot
+          - if current_user.role == "mentee"
+            %li.progDot
+          %li.progDot.active

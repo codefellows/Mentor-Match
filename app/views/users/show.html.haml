@@ -7,12 +7,8 @@
   %header
   %article.userProfile
     %figure.profilePic
-    = image_tag @user.gravatar_url(:d => "http%3A%2F%2Fi.imgur.com%2FUFa4kwT.png")
-    - if policy(@user).update?
-      %a{href: "http://en.gravatar.com/"}
-        %figcaption
-          %small Don't see your picture? Get a Gravatar!
-          %span.fa.fa-chevron-circle-right
+    = image_tag image_view(@user)
+
     %section
       %label{for: "Name"} Name:
       %p#Name #{@user.first_name} #{@user.last_name}
@@ -99,7 +95,7 @@
   %aside
     / Edit own profile
     - if policy(@user).update?
-      = link_to "Edit", edit_user_path(current_user), class: 'addFav'
+      = link_to "Edit", edit_user_path(current_user), class: 'addFav', 'data-no-turbolink' => true
     / Add or remove favorites link
     - if current_user.voted_for? @user
       = link_to "Remove from favorites", unstar_user_path(@user), method: :put, class: "addFav"
@@ -115,7 +111,3 @@
     - if current_user.accepted_friends.include?(@user)
       = link_to "End Mentorship", friendship_path(@user.find_friendship(current_user)), method: :delete, data: { confirm: 'Are you sure?'}, class: 'addFav'
     = link_to 'Home', users_path, class: 'addFav'
-
-
-
-

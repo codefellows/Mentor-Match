@@ -25,4 +25,3 @@ document.getElementById('beMentor').onclick=assignRoleMentor();
 // studentRoleButton.addEventListener("click", assignRoleStudent());
 
 // mentorRoleButton.addeventListener("click", assignRoleMentor());
-

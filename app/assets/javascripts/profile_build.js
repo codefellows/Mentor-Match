@@ -20,8 +20,8 @@ var profileScroller = function () {
       $.scrollTo('#s5', 800, { easing: 'swing' });
     });
 
-    $('#next_6').click(function () {
-      $.scrollTo('#s7', 800, { easing: 'swing' });
+    $('#next_5').click(function () {
+      $.scrollTo('#s6', 800, { easing: 'swing' });
     });
   })();
 }

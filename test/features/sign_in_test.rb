@@ -8,7 +8,6 @@ feature 'A user must be able to sign in in a variety of ways' do
   end
 
   scenario 'As a user I want to create a new mentor account ' do
-    page.must_have_content 'Dexter'
     first(:link, 'Become a Mentor').click
     fill_in 'Email', with: users(:mentor_user).email
     fill_in 'First Name', with: 'Bruce'
@@ -20,7 +19,6 @@ feature 'A user must be able to sign in in a variety of ways' do
   end
 
   scenario 'Sign up with existing email will be sent back to create account' do
-    page.must_have_content 'Dexter'
     first(:link, 'Find a Mentor').click
     fill_in 'Email', with: users(:mentee_user).email
     fill_in 'First Name', with: 'Robin'
@@ -33,7 +31,6 @@ feature 'A user must be able to sign in in a variety of ways' do
   end
 
   scenario 'As a mentee, sign up and edit my profile' do
-    page.must_have_content 'Dexter'
     first(:link, 'Find a Mentor').click
     fill_in 'Email', with: 'omg@omg.com'
     fill_in 'First Name', with: 'Robin'

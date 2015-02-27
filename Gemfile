@@ -51,4 +51,5 @@ group :test do
   gem 'minitest-rails-capybara'
   gem 'simplecov'
   gem 'faker', '~> 1.4.2'
+  gem 'poltergeist'
 end

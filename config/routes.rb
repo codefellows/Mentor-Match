@@ -21,5 +21,4 @@ Rails.application.routes.draw do
   get 'static_pages/toolbox' => 'static_pages#toolbox', as: :toolbox
   get 'users/:id/favorites' => 'users#favorites', as: :favorites
   get '/create_account' => 'user#new'
-
 end
